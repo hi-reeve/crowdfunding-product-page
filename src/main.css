@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --cyan: 176, 50%, 47%;
+        --cyan-dark: 176, 72%, 28%;
+		--dark-gray : 0, 0%, 48%;
+    }
+}

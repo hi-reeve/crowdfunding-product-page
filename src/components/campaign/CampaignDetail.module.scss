@@ -1,0 +1,22 @@
+.campaign {
+    &__detail {
+        @apply w-full bg-white shadow rounded-md flex flex-col items-center px-8 py-8  -mt-20;
+
+        &--name {
+            @apply text-black text-xl font-extrabold mt-5 text-center;
+        }
+        &--description {
+            @apply text-sm text-gray-dark font-medium text-center mt-5;
+        }
+        &--logo {
+            @apply w-16 h-16 -mt-16 ;
+        }
+		&--cta{
+			@apply flex items-center w-full mt-5;
+			&-bookmark{
+				@apply mx-2;
+			}
+		}
+
+    }
+}

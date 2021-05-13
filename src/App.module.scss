@@ -1,0 +1,14 @@
+.main {
+    @apply relative;
+}
+.banner {
+    @apply relative z-0;
+    &::after {
+        content: "";
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
+        @apply absolute left-0 top-0 w-full h-full;
+    }
+}
+.campaign__wrapper {
+    @apply px-8 flex flex-col justify-center items-center z-10 relative;
+}
