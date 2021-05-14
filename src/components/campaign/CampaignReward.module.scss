@@ -1,0 +1,20 @@
+.campaign {
+    &__reward {
+        @apply px-6 py-6 bg-white shadow rounded-md mt-5 border border-gray-200;
+        &--name {
+            @apply font-bold text-sm;
+        }
+		&--pledge{
+			@apply text-sm text-cyan font-semibold;
+		}
+		&--cta{
+			@apply flex lg:flex-row flex-col lg:items-center;
+		}
+		&--detail{
+			@apply my-5 text-gray-dark text-sm font-medium leading-relaxed;
+		}
+		&--left{
+			@apply font-bold text-3xl;
+		}
+    }
+}

@@ -6,13 +6,14 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import style from "@/App.module.scss";
 import CampaignDetail from "@/components/campaign/CampaignDetail";
 import CampaignStats from "@/components/campaign/CampaignStats";
+import CampaignDescription from "@/components/campaign/CampaignDescription";
 function App() {
     const isMobile = useMediaQuery(525);
 
     return (
         <div className="App">
             <AppHeader />
-            <div className="main">
+			<div className={style.main }>
                 <div className={style.banner}>
                     {isMobile ? (
                         <img src={ImageHeroMobile} alt="image hero" />
@@ -21,8 +22,9 @@ function App() {
                     )}
                 </div>
                 <div className={style.campaign__wrapper}>
-					<CampaignDetail />
-					<CampaignStats/>
+                    <CampaignDetail />
+                    <CampaignStats />
+                    <CampaignDescription />
                 </div>
             </div>
         </div>

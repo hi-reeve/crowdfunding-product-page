@@ -1,0 +1,11 @@
+.campaign {
+    &__description {
+        @apply bg-white shadow px-8 py-8 w-full mt-5 rounded-md;
+        &--title {
+            @apply font-bold text-xl;
+        }
+		&--description{
+			@apply mt-5 text-gray-dark font-medium text-sm leading-loose;
+		}
+    }
+}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "@/components/campaign/CampaignDetail.module.scss";
 import CampaignLogo from "@/assets/images/logo-mastercraft.svg";
 import Button from "@/components/Button";
-import BookmarkIcon from "@/assets/images/icon-bookmark.svg";
+
 const CampaignDetail = () => {
     const [bookmark, setBookmark] = useState(false);
     const handleClickBookmark = () => {
@@ -29,7 +29,7 @@ const CampaignDetail = () => {
                         className="text-icon-bookmark-icon w-14 h-14"
                         xmlns="http://www.w3.org/2000/svg"
                     >
-                        <g fill="none" fill-rule="evenodd">
+                        <g fill="none" fillRule="evenodd">
                             <circle
                                 fill={
                                     bookmark ? "hsl(176, 50%, 47%)" : "#2f2f2f"

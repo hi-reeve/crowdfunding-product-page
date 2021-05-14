@@ -6,7 +6,7 @@
             @apply text-black text-xl font-extrabold mt-5 text-center;
         }
         &--description {
-            @apply text-sm text-gray-dark font-medium text-center mt-5;
+            @apply text-sm text-gray-dark font-medium text-center mt-5 leading-loose;
         }
         &--logo {
             @apply w-16 h-16 -mt-16 ;

@@ -1,6 +1,6 @@
 .campaign {
     &__stats {
-        @apply w-full mt-5 px-8 py-4 bg-white shadow-md flex flex-col;
+        @apply w-full mt-5 px-8 py-4 bg-white shadow flex flex-col;
 
         &--stats {
             @apply flex flex-col text-center py-4;

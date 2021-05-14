@@ -31,7 +31,7 @@ const CampaignStats = () => {
             <div className={style["campaign__stats--progress-bar"]}>
                 <div
                     style={{
-                        width: '80%',
+                        width: `${(89914 / 100000) * 100}%`,
                     }}
                     className={style["campaign__stats--progress"]}
                 ></div>
