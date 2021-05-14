@@ -10,3 +10,6 @@
 		--dark-gray : 0, 0%, 48%;
     }
 }
+body{
+	@apply font-comissioner;
+}

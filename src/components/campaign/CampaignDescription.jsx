@@ -46,7 +46,12 @@ const CampaignDescription = () => {
                 pens, and USB sticks to be stored under the stand.
             </p>
             {campaignRewardList.map(reward => {
-                return <CampaignReward key={reward.id} reward={reward} />;
+                return (
+                    <CampaignReward
+                        key={reward.id}
+                        reward={reward}
+                    />
+                );
             })}
         </div>
     );

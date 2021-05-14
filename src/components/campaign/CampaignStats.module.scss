@@ -1,9 +1,9 @@
 .campaign {
     &__stats {
-        @apply w-full mt-5 px-8 py-4 bg-white shadow flex flex-col;
+        @apply w-full mt-5 px-8 py-4 bg-white shadow flex md:flex-row md:justify-center items-center flex-col;
 
         &--stats {
-            @apply flex flex-col text-center py-4;
+            @apply flex flex-col text-center py-4 mx-8;
             &-num {
                 @apply text-black text-3xl font-extrabold;
             }
