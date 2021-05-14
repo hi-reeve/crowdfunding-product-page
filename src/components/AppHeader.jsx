@@ -4,9 +4,12 @@ import Logo from "@/assets/images/logo.svg";
 import IconHamburger from "@/assets/images/icon-hamburger.svg";
 import IconCloseMenu from "@/assets/images/icon-close-menu.svg";
 import { createPortal } from "react-dom";
+import useMediaQuery from "@/hooks/useMediaQuery";
 const AppHeader = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const isMobile = useMediaQuery(767);
     const navElement = useRef();
+    const navMenuElement = useRef();
     const handleMenuOpen = () => {
         setMenuOpen(!menuOpen);
     };
@@ -23,7 +26,6 @@ const AppHeader = () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
-
     const appRoot = document.querySelector("body");
     return (
         <React.Fragment>
@@ -57,6 +59,7 @@ const AppHeader = () => {
                         />
                     </div>
                     <div
+                        ref={navMenuElement}
                         className={`${style.nav__menu} ${
                             menuOpen ? style.open : ""
                         }`}

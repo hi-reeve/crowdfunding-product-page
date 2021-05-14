@@ -1,8 +1,11 @@
 .main {
-    @apply relative pb-8;
+    @apply relative pb-8 ;
 }
 .banner {
     @apply relative z-0;
+	> img {
+	 @apply w-full;	
+	}
     &::after {
         content: "";
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
@@ -10,5 +13,5 @@
     }
 }
 .campaign__wrapper {
-    @apply px-8 flex flex-col justify-center items-center z-10 relative;
+    @apply px-8 flex flex-col justify-center items-center z-10 relative lg:w-1/2 mx-auto;
 }

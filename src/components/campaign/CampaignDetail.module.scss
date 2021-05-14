@@ -12,9 +12,18 @@
             @apply w-16 h-16 -mt-16 ;
         }
 		&--cta{
-			@apply flex items-center w-full mt-5;
+			@apply flex items-center w-full mt-5 relative ;
 			&-bookmark{
-				@apply mx-2;
+				@apply mx-2 flex items-center relative cursor-pointer  hover:opacity-70 transition-all duration-300 ease-in-out;
+				svg{
+					@apply  z-10;
+				}
+				&-ribbon{
+					@apply -ml-10 bg-gray-200 h-14 z-0 relative max-w-max rounded-full pr-8 pl-14 py-4 font-bold text-gray-dark select-none lg:block hidden transition-all duration-300 ease-in-out;
+					&.active{
+						@apply text-cyan-dark;
+					}
+				}
 			}
 		}
 

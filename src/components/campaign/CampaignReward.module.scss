@@ -1,23 +1,27 @@
 .campaign {
     &__reward {
         @apply px-6 py-6 bg-white  rounded-md mt-5 border border-gray-200;
-		&.disabled{
-			@apply opacity-50;
-		}
+
+        &.disabled {
+            @apply opacity-50 cursor-not-allowed;
+        }
+        &-wrapper {
+            @apply flex md:flex-row flex-col w-full;
+        }
         &--name {
             @apply font-bold text-sm;
         }
-		&--pledge{
-			@apply text-sm text-cyan font-semibold;
-		}
-		&--cta{
-			@apply flex md:flex-row flex-col md:items-center;
-		}
-		&--detail{
-			@apply my-5 text-gray-dark text-sm font-medium leading-relaxed;
-		}
-		&--left{
-			@apply font-bold text-3xl;
-		}
+        &--pledge {
+            @apply block text-sm text-cyan font-semibold md:ml-auto;
+        }
+        &--cta {
+            @apply flex md:flex-row flex-col md:items-center;
+        }
+        &--detail {
+            @apply my-5 text-gray-dark text-sm font-medium leading-relaxed;
+        }
+        &--left {
+            @apply font-bold text-3xl;
+        }
     }
 }

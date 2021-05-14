@@ -8,12 +8,14 @@ const CampaignReward = props => {
                 props.reward.left <= 0 ? style.disabled : ""
             }`}
         >
-            <h4 className={style["campaign__reward--name"]}>
-                {props.reward.name}
-            </h4>
-            <span className={style["campaign__reward--pledge"]}>
-                Pledge ${props.reward.pledge} or more
-            </span>
+            <div className={style['campaign__reward-wrapper']}>
+                <h4 className={style["campaign__reward--name"]}>
+                    {props.reward.name}
+                </h4>
+                <span className={style["campaign__reward--pledge"]}>
+                    Pledge ${props.reward.pledge} or more
+                </span>
+            </div>
             <p className={style["campaign__reward--detail"]}>
                 {props.reward.description}
             </p>

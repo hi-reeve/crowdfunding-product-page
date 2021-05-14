@@ -1,0 +1,7 @@
+.campaign {
+    &__modal {
+        &--desc {
+            @apply text-sm my-5 text-gray-dark leading-relaxed;
+        }
+    }
+}

@@ -1,19 +1,18 @@
 .nav {
-    @apply flex w-full px-8 pt-8 pb-4  fixed top-0 left-0 z-50 transition-all duration-300 ease-in-out;
-	&__brand{
-		@apply cursor-pointer;
-	}
+    @apply flex w-full px-8 pt-8 pb-4 items-center fixed top-0 left-0 z-[60] transition-all duration-300 ease-in-out;
+    &__brand {
+        @apply cursor-pointer;
+    }
     &.scrolled {
-		@apply shadow bg-black py-4;
+        @apply shadow bg-cyan py-4;
     }
     &__toggle {
         @apply ml-auto cursor-pointer block sm:hidden;
     }
     &__menu {
-        @apply flex lg:flex-row flex-col lg:bg-transparent bg-white md:relative absolute top-[125%]  shadow-md rounded-md w-5/6 left-1/2  transform -translate-x-1/2 transition-all duration-300 ease-in-out -translate-y-5 opacity-0;
-
+        @apply md:flex md:flex-row flex-col md:items-center md:bg-transparent bg-white md:relative absolute top-[125%] md:shadow-none  shadow-md rounded-md md:w-auto w-5/6 md:left-0 left-1/2  transform md:translate-x-0 -translate-x-1/2 transition-all  duration-300 ease-in-out md:translate-y-0 -translate-y-5 md:opacity-100 opacity-0 md:ml-auto;
         &.open {
-            @apply transform translate-y-0 -translate-x-1/2  opacity-100;
+            @apply transform translate-y-0 -translate-x-1/2   opacity-100;
         }
         &--overlay {
             content: "";
@@ -29,9 +28,9 @@
         }
     }
     &__link {
-        @apply lg:text-white text-black cursor-pointer font-bold px-8 py-4;
+        @apply md:text-white text-black cursor-pointer font-bold px-8 md:py-0 py-4 md:hover:text-cyan-dark transition-all duration-300 ease-in-out;
         &:nth-child(2) {
-            @apply lg:border-none border-b border-t;
+            @apply md:border-none border-b border-t;
         }
     }
 }
