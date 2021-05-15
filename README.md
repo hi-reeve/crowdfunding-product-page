@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor](https://your-solution-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/challenges/crowdfunding-product-page-7uvcZe7ZR/hub/crowdfunding-product-page-with-reactjs-R7HbCXc30)
 - Live Site URL: [Live Site](https://crowdfunding-product-page-main-rust.vercel.app/)
 
 ### Built with
