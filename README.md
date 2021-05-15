@@ -41,6 +41,7 @@ Users should be able to:
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [Tailwindcss](https://tailwindcss.com/) - Css Utilities Library
+- [ViteJS](https://vitejs.dev/) - Frontend build tool
 
 ### What I learned
 I just learning react and this is my first project i build using react
@@ -48,7 +49,7 @@ i learn so much when building this, creating custom hooks, using css module with
 to be honest i still prefer vuejs when it comes to component communication but i found that react is fun after all
 ## Author
 
-- Website -[creeve.me](https://creeve.me)
+- Website - [creeve.me](https://creeve.me)
 - Frontend Mentor - [@zynth17](https://www.frontendmentor.io/profile/zynth17)
 - Twitter - [@hi_reeve](https://twitter.com/hi_reeve)
 - Instagram - [@hi_reeve](https://www.instagram.com/hi_reeve/)
