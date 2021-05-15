@@ -8,7 +8,7 @@ const CampaignReward = props => {
                 props.reward.left <= 0 ? style.disabled : ""
             }`}
         >
-            <div className={style['campaign__reward-wrapper']}>
+            <div className={style["campaign__reward-wrapper"]}>
                 <h4 className={style["campaign__reward--name"]}>
                     {props.reward.name}
                 </h4>
@@ -27,6 +27,7 @@ const CampaignReward = props => {
                     <span className="ml-2 text-gray-dark">left</span>
                 </h2>
                 <Button
+                    onClick={props.openModal}
                     className={`mt-5 lg:max-w-[200px] md:max-w-[40%] max-w-[80%] md:ml-auto`}
                     type="button"
                     disabled={props.reward.left <= 0}

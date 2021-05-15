@@ -1,20 +1,48 @@
 .modal {
     &__reward {
-        @apply px-4 py-8 bg-white border border-gray-300 rounded-md transition-all duration-300 ease-in-out;
-        &.selected {
-            @apply border-2 border-cyan-dark;
+        @apply px-4 py-8 bg-white border border-gray-300 rounded-md transition-all duration-300 ease-in-out my-4;
+        &--header {
+            @apply flex flex-row w-full items-center;
         }
-        &-radio {
+        &--info {
+            @apply flex md:flex-row flex-col ml-5 w-full;
+        }
+        &--title {
+            @apply font-extrabold;
+        }
+        &--amount {
+            @apply md:ml-auto md:mt-0 mt-1 text-cyan text-sm font-medium;
+        }
+        &.selected {
+            @apply ring-2 ring-cyan-dark;
+        }
+        &--radio {
             content: "";
             @apply w-5 h-5 rounded-full border border-gray-300 transition-all duration-300 ease-in-out;
             &::after {
                 content: "";
-                @apply w-2.5 h-2.5 bg-cyan  rounded-full block absolute left-1/2 top-1/2 transform scale-0 -translate-x-1/2 -translate-y-1/2 ;
+                @apply w-2.5 h-2.5 bg-cyan  rounded-full block absolute left-1/2 top-1/2 transform scale-0 -translate-x-1/2 -translate-y-1/2;
             }
             &.selected {
                 @apply relative;
                 &::after {
                     @apply transform scale-100 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out;
+                }
+            }
+        }
+        &--content {
+            @apply mt-5;
+        }
+        &--description {
+            @apply text-gray-dark text-sm leading-relaxed font-medium;
+        }
+        &--left {
+            @apply mt-5;
+            span:first-child {
+                @apply font-extrabold text-xl;
+
+                + span {
+                    @apply text-gray-dark ml-2 font-medium;
                 }
             }
         }

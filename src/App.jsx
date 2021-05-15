@@ -55,12 +55,21 @@ function App() {
                     )}
                 </div>
                 <div className={style.campaign__wrapper}>
-                    <CampaignDetail />
+                    <CampaignDetail openModal={handleOpenModal} />
                     <CampaignStats />
-                    <CampaignDescription rewardList={campaignRewardList} />
+                    <CampaignDescription
+                        openModal={handleOpenModal}
+                        rewardList={campaignRewardList}
+                    />
                 </div>
             </div>
-            {modalVisible && <CampaignModal />}
+            {modalVisible && (
+                <CampaignModal
+                    rewardList={campaignRewardList}
+                    onClose={handleCloseModal}
+                    visible={modalVisible}
+                />
+            )}
         </div>
     );
 }

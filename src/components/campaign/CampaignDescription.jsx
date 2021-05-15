@@ -1,7 +1,7 @@
 import React from "react";
 import style from "@/components/campaign/CampaignDescription.module.scss";
 import CampaignReward from "@/components/campaign/CampaignReward";
-const CampaignDescription = ({ rewardList }) => {
+const CampaignDescription = ({ rewardList, openModal }) => {
     return (
         <div className={style.campaign__description}>
             <h3 className={style["campaign__description--title"]}>
@@ -20,7 +20,13 @@ const CampaignDescription = ({ rewardList }) => {
                 pens, and USB sticks to be stored under the stand.
             </p>
             {rewardList.map(reward => {
-                return <CampaignReward key={reward.id} reward={reward} />;
+                return (
+                    <CampaignReward
+                        openModal={openModal}
+                        key={reward.id}
+                        reward={reward}
+                    />
+                );
             })}
         </div>
     );

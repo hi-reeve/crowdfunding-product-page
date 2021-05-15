@@ -58,16 +58,18 @@ const AppHeader = () => {
                             className={style["nav__toggle--icon"]}
                         />
                     </div>
-                    <div
-                        ref={navMenuElement}
-                        className={`${style.nav__menu} ${
-                            menuOpen ? style.open : ""
-                        }`}
-                    >
-                        <div className={style.nav__link}>About</div>
-                        <div className={style.nav__link}>Discover</div>
-                        <div className={style.nav__link}>Get Started</div>
-                    </div>
+                    {menuOpen && (
+                        <div
+                            ref={navMenuElement}
+                            className={`${style.nav__menu} ${
+                                menuOpen ? style.open : ""
+                            }`}
+                        >
+                            <div className={style.nav__link}>About</div>
+                            <div className={style.nav__link}>Discover</div>
+                            <div className={style.nav__link}>Get Started</div>
+                        </div>
+                    )}
                 </nav>,
                 appRoot
             )}

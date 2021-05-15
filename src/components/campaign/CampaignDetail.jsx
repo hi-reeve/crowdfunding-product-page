@@ -3,7 +3,7 @@ import style from "@/components/campaign/CampaignDetail.module.scss";
 import CampaignLogo from "@/assets/images/logo-mastercraft.svg";
 import Button from "@/components/Button";
 
-const CampaignDetail = () => {
+const CampaignDetail = props => {
     const [bookmark, setBookmark] = useState(false);
     const handleClickBookmark = () => {
         setBookmark(!bookmark);
@@ -22,7 +22,10 @@ const CampaignDetail = () => {
                 strain.
             </p>
             <div className={style["campaign__detail--cta"]}>
-                <Button className="lg:mr-auto lg:max-w-[200px]">
+                <Button
+                    className="lg:mr-auto lg:max-w-[200px]"
+                    onClick={props.openModal}
+                >
                     Back this project
                 </Button>
                 <div
