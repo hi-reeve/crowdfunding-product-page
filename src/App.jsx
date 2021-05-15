@@ -8,16 +8,39 @@ import CampaignDetail from "@/components/campaign/CampaignDetail";
 import CampaignStats from "@/components/campaign/CampaignStats";
 import CampaignDescription from "@/components/campaign/CampaignDescription";
 import CampaignModal from "./components/campaign/CampaignModal";
+import CampaignModalThankyou from "./components/campaign/CampaignModalThankyou";
 function App() {
     const isMobile = useMediaQuery(525);
     const [modalVisible, setModalVisible] = useState(false);
-    const handleOpenModal = () => {
+    const [selectedId, setSelectedId] = useState(0);
+    const [modalThankyouVisible, setModalThankyouVisible] = useState(false);
+    const appRoot = document.querySelector("body");
+    const handleOpenModal = id => {
+        appRoot.style.overflow = "hidden";
         setModalVisible(true);
+        setSelectedId(id);
     };
     const handleCloseModal = () => {
+        appRoot.style.overflow = "auto";
         setModalVisible(false);
+        setSelectedId(0);
     };
-    const campaignRewardList = [
+    const setSelected = id => {
+        setSelectedId(id);
+    };
+    const [campaignStats, setCampaignStats] = useState({
+        backedAmount: 89914,
+        backers: 5007,
+    });
+    const [campaignRewardList, setCampaignRewardList] = useState([
+        {
+            id: 0,
+            name: "Pledge with no reward",
+            pledge: 1,
+            description:
+                "  Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
+            left: undefined,
+        },
         {
             id: 1,
             name: "Bamboo Stand",
@@ -42,7 +65,23 @@ function App() {
                 " You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
             left: 0,
         },
-    ];
+    ]);
+
+    const handleBackedSuccess = (id, amount) => {
+        const selectedReward = campaignRewardList.findIndex(
+            reward => reward.id === id
+        );
+
+        const updatedReward = [...campaignRewardList];
+        if (updatedReward[selectedReward].left)
+            updatedReward[selectedReward].left -= 1;
+
+        setCampaignRewardList(updatedReward);
+        setCampaignStats({
+            backedAmount: campaignStats.backedAmount + amount,
+            backers: campaignStats.backers + 1,
+        });
+    };
     return (
         <div className="App">
             <AppHeader />
@@ -56,7 +95,7 @@ function App() {
                 </div>
                 <div className={style.campaign__wrapper}>
                     <CampaignDetail openModal={handleOpenModal} />
-                    <CampaignStats />
+                    <CampaignStats stats={campaignStats} />
                     <CampaignDescription
                         openModal={handleOpenModal}
                         rewardList={campaignRewardList}
@@ -65,11 +104,19 @@ function App() {
             </div>
             {modalVisible && (
                 <CampaignModal
+                    setSelected={setSelected}
                     rewardList={campaignRewardList}
                     onClose={handleCloseModal}
                     visible={modalVisible}
+                    selected={selectedId}
+                    onThankyou={setModalThankyouVisible}
+                    setCampaignReward={handleBackedSuccess}
                 />
             )}
+            <CampaignModalThankyou
+                visible={modalThankyouVisible}
+                closeModal={setModalThankyouVisible}
+            />
         </div>
     );
 }

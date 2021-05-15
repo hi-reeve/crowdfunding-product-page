@@ -20,19 +20,25 @@ const CampaignReward = props => {
                 {props.reward.description}
             </p>
             <div className={style["campaign__reward--cta"]}>
-                <h2>
-                    <span className={style["campaign__reward--left"]}>
-                        {props.reward.left}
-                    </span>
-                    <span className="ml-2 text-gray-dark">left</span>
-                </h2>
+                {props.reward.left && (
+                    <h2>
+                        <span className={style["campaign__reward--left"]}>
+                            {props.reward.left}
+                        </span>
+                        <span className="ml-2 text-gray-dark">left</span>
+                    </h2>
+                )}
                 <Button
-                    onClick={props.openModal}
+                    onClick={() => {
+                        props.openModal(props.reward.id);
+                    }}
                     className={`mt-5 lg:max-w-[200px] md:max-w-[40%] max-w-[80%] md:ml-auto`}
                     type="button"
                     disabled={props.reward.left <= 0}
                 >
-                    {props.reward.left > 0 ? "Select Reward" : "Out of Stock"}
+                    {props.reward.left > 0 || props.reward.left === undefined
+                        ? "Select Reward"
+                        : "Out of Stock"}
                 </Button>
             </div>
         </div>

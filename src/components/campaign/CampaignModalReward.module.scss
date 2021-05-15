@@ -1,8 +1,8 @@
 .modal {
     &__reward {
-        @apply px-4 py-8 bg-white border border-gray-300 rounded-md transition-all duration-300 ease-in-out my-4;
+        @apply py-8 bg-white border border-gray-300 rounded-md transition-all duration-300 ease-in-out my-4 cursor-pointer;
         &--header {
-            @apply flex flex-row w-full items-center;
+            @apply flex flex-row w-full items-center px-4;
         }
         &--info {
             @apply flex md:flex-row flex-col ml-5 w-full;
@@ -31,7 +31,7 @@
             }
         }
         &--content {
-            @apply mt-5;
+            @apply mt-5 px-4;
         }
         &--description {
             @apply text-gray-dark text-sm leading-relaxed font-medium;
@@ -45,6 +45,21 @@
                     @apply text-gray-dark ml-2 font-medium;
                 }
             }
+        }
+        &--input {
+            @apply border-t border-gray-300 mt-5 px-4 flex items-center md:flex-row flex-col;
+
+            .amount {
+                &--input {
+                    @apply rounded-full w-full  mr-2 focus:outline-none focus:ring-2 focus:ring-cyan focus:border-none px-4 appearance-none;
+                }
+				&--error{
+					@apply focus:ring-2 focus:ring-red-500 ring-2 ring-red-500;
+				}
+            }
+        }
+        &.disabled {
+            @apply opacity-50 cursor-not-allowed;
         }
     }
 }

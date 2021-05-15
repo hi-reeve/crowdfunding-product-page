@@ -7,7 +7,6 @@ import { createPortal } from "react-dom";
 import useMediaQuery from "@/hooks/useMediaQuery";
 const AppHeader = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const isMobile = useMediaQuery(767);
     const navElement = useRef();
     const navMenuElement = useRef();
     const handleMenuOpen = () => {
@@ -58,18 +57,16 @@ const AppHeader = () => {
                             className={style["nav__toggle--icon"]}
                         />
                     </div>
-                    {menuOpen && (
-                        <div
-                            ref={navMenuElement}
-                            className={`${style.nav__menu} ${
-                                menuOpen ? style.open : ""
-                            }`}
-                        >
-                            <div className={style.nav__link}>About</div>
-                            <div className={style.nav__link}>Discover</div>
-                            <div className={style.nav__link}>Get Started</div>
-                        </div>
-                    )}
+                    <div
+                        ref={navMenuElement}
+                        className={`${style.nav__menu} ${
+                            menuOpen ? style.open : ""
+                        }`}
+                    >
+                        <div className={style.nav__link}>About</div>
+                        <div className={style.nav__link}>Discover</div>
+                        <div className={style.nav__link}>Get Started</div>
+                    </div>
                 </nav>,
                 appRoot
             )}

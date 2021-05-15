@@ -24,7 +24,9 @@ const CampaignDetail = props => {
             <div className={style["campaign__detail--cta"]}>
                 <Button
                     className="lg:mr-auto lg:max-w-[200px]"
-                    onClick={props.openModal}
+                    onClick={() => {
+                        props.openModal(null);
+                    }}
                 >
                     Back this project
                 </Button>
